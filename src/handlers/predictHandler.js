@@ -1,6 +1,6 @@
 const predictClassification = require("../services/inferenceService");
 const crypto = require("crypto");
-const addPredict = require("../services/addpredict");
+const addPredict = require("../services/addPredict");
 
 async function postPredictHandler(request, h) {
   const { image } = request.payload;
@@ -50,7 +50,7 @@ async function postPredictHandler(request, h) {
     data,
   });
 
-   await addPredict(id, data);
+  await addPredict(id, data);
 
   response.code(201);
   return response;
